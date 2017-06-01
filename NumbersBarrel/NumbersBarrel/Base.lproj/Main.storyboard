@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Barrel View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BarrelViewController" customModule="NumbersBarrel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckD-nV-OR0" customClass="BarrelControl" customModule="NumbersBarrel" customModuleProvider="target">
+                                <rect key="frame" x="74" y="50" width="227" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="432-xI-BRB"/>
+                                    <constraint firstAttribute="width" constant="227" id="S12-8M-MRK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="barrelsCount">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="currentBarrelValue">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cmW-EW-J63">
+                                <rect key="frame" x="186.5" y="130" width="151.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Target Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUg-Gz-ous">
+                                <rect key="frame" x="36" y="135" width="140.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeN-qg-WwI">
+                                <rect key="frame" x="46" y="188" width="283" height="30"/>
+                                <color key="backgroundColor" red="0.0039215686269999999" green="0.61176470589999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Show Target Value On Barrel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showTargetValuePressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="UBM-Mn-HxZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAi-GT-UbN">
+                                <rect key="frame" x="46" y="252" width="283" height="30"/>
+                                <color key="backgroundColor" red="0.0039215686269999999" green="0.61176470589999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Show Random Value On Barrel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showRandomValuePressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="pSe-WT-PCn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltt-8s-FQJ">
+                                <rect key="frame" x="46" y="318" width="283" height="30"/>
+                                <color key="backgroundColor" red="0.0039215686269999999" green="0.61176470589999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Stop Barrel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="1z7-IJ-22U"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="AeN-qg-WwI" firstAttribute="top" secondItem="cmW-EW-J63" secondAttribute="bottom" constant="28" id="5gv-TF-xVf"/>
+                            <constraint firstItem="Ltt-8s-FQJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6E6-MU-Bq1"/>
+                            <constraint firstItem="rAi-GT-UbN" firstAttribute="top" secondItem="AeN-qg-WwI" secondAttribute="bottom" constant="34" id="7QX-Ds-M0b"/>
+                            <constraint firstItem="AeN-qg-WwI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="B26-wL-aSM"/>
+                            <constraint firstItem="AeN-qg-WwI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eqc-h2-dVg"/>
+                            <constraint firstItem="rAi-GT-UbN" firstAttribute="trailing" secondItem="AeN-qg-WwI" secondAttribute="trailing" id="K2P-R5-Ej9"/>
+                            <constraint firstItem="ckD-nV-OR0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NJZ-ow-30D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cmW-EW-J63" secondAttribute="trailing" constant="21" id="RLU-I4-C1a"/>
+                            <constraint firstItem="rAi-GT-UbN" firstAttribute="leading" secondItem="AeN-qg-WwI" secondAttribute="leading" id="Tuj-uF-RCI"/>
+                            <constraint firstItem="NUg-Gz-ous" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Y5I-qj-dY5"/>
+                            <constraint firstItem="cmW-EW-J63" firstAttribute="leading" secondItem="NUg-Gz-ous" secondAttribute="trailing" constant="10" id="aa4-E0-DyX"/>
+                            <constraint firstItem="Ltt-8s-FQJ" firstAttribute="trailing" secondItem="rAi-GT-UbN" secondAttribute="trailing" id="eWg-Fx-pJi"/>
+                            <constraint firstItem="Ltt-8s-FQJ" firstAttribute="top" secondItem="rAi-GT-UbN" secondAttribute="bottom" constant="36" id="eqE-02-oWc"/>
+                            <constraint firstItem="rAi-GT-UbN" firstAttribute="centerX" secondItem="AeN-qg-WwI" secondAttribute="centerX" id="fI7-8l-ndq"/>
+                            <constraint firstItem="NUg-Gz-ous" firstAttribute="centerY" secondItem="cmW-EW-J63" secondAttribute="centerY" id="hf8-F1-eeu"/>
+                            <constraint firstItem="ckD-nV-OR0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="i3a-GD-mPf"/>
+                            <constraint firstItem="Ltt-8s-FQJ" firstAttribute="leading" secondItem="rAi-GT-UbN" secondAttribute="leading" id="oKV-Fu-2uz"/>
+                            <constraint firstItem="cmW-EW-J63" firstAttribute="top" secondItem="ckD-nV-OR0" secondAttribute="bottom" constant="38" id="vwQ-Rs-yiS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="barrel" destination="ckD-nV-OR0" id="YbE-cr-kHm"/>
+                        <outlet property="showRandomValueButton" destination="rAi-GT-UbN" id="kEk-x7-CJ7"/>
+                        <outlet property="showTargetValueButton" destination="AeN-qg-WwI" id="Ecx-V6-J0M"/>
+                        <outlet property="stopBarrelAnimationButton" destination="Ltt-8s-FQJ" id="Xud-es-jsQ"/>
+                        <outlet property="targetValueTextField" destination="cmW-EW-J63" id="uMU-7j-gPi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>
